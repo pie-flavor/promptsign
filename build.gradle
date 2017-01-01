@@ -1,0 +1,38 @@
+buildscript {
+    repositories {
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
+    }
+    dependencies {
+        classpath 'com.gradle.publish:plugin-publish-plugin:0.9.7'
+    }
+}
+
+group 'flavor.pie'
+version '1.0.0'
+
+apply plugin: 'groovy'
+apply plugin: 'com.gradle.plugin-publish'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile localGroovy()
+    compile gradleApi()
+}
+
+pluginBundle {
+    website = 'https://github.com/pie-flavor/promptsign'
+    vcsUrl = 'https://github.com/pie-flavor/promptsign'
+    description = 'Asks for non-existent properties for the sign plugin at buildtime.'
+    tags = ['sign']
+    plugins {
+        promptsign {
+            id = 'flavor.pie.promptsign'
+            displayName = 'promptsign'
+        }
+    }
+}
