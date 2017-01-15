@@ -76,7 +76,7 @@ class PromptSignPlugin implements Plugin<Project> {
                             project.ext."signing.secretKeyRingFile" = System.console().readLine("PGP keyring file: ")
                         }
                         if (needsPass) {
-                            project.ext."signing.password" = System.console().readPassword("PGP passkey: ")
+                            project.ext."signing.password" = new String(System.console().readPassword("PGP passkey: "))
                         }
                     }
                 }
