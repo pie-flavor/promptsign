@@ -27,8 +27,8 @@ dependencies {
 pluginBundle {
     website = 'https://github.com/pie-flavor/promptsign'
     vcsUrl = 'https://github.com/pie-flavor/promptsign'
-    description = 'Asks for non-existent properties for the sign plugin at buildtime.'
-    tags = ['sign']
+    description = 'Asks for non-existent properties for the signing plugin at buildtime.'
+    tags = ['sign','signing']
     plugins {
         promptsign {
             id = 'flavor.pie.promptsign'
