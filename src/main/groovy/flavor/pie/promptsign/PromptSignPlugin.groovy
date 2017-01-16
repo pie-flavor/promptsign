@@ -12,7 +12,6 @@ class PromptSignPlugin implements Plugin<Project> {
         target.with {
             plugins.apply('signing')
             signing.sign(configurations.archives)
-            tasks.build.dependsOn tasks.signArchives
             gradle.taskGraph.whenReady { graph ->
                 if (graph.allTasks.any { it instanceof Sign}) {
                     boolean needsId = false
